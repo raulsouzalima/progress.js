@@ -120,8 +120,8 @@
       progressElementContainer.style.bottom = 0;
     } else {
       //set progress bar container size and offset
-      progressElementContainer.style.left  = targetElementOffset.left + 'px';
-      progressElementContainer.style.top   = targetElementOffset.top + 'px';
+      //progressElementContainer.style.left  = targetElementOffset.left + 'px';
+      //progressElementContainer.style.top   = targetElementOffset.top + 'px';
       //if targetElement is body set to percent so it scales with browser resize
       if (targetElement.nodeName == 'BODY') {
         progressElementContainer.style.width = '100%';
@@ -394,10 +394,18 @@
    */
   function _createContainer() {
     //first check if we have an container already, we don't need to create it again
-    if (!document.querySelector(".progressjs-container")) {
+    var elementParent;
+
+    if(this._targetElement[0].nodeName == 'BODY') {
+      elementParent = document.body;
+    } else {
+      elementParent = this._targetElement[0];
+    }
+
+    if(!elementParent.querySelector(".progressjs-container")) {
       var containerElement = document.createElement("div");
       containerElement.className = "progressjs-container";
-      document.body.appendChild(containerElement);
+      elementParent.appendChild(containerElement);
     }
   }
 
