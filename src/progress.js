@@ -233,7 +233,7 @@
    */
   function _getPercentElement(targetElement) {
     var progressjsId = parseInt(targetElement.getAttribute('data-progressjs'));
-    return document.querySelector('.progressjs-container > .progressjs-progress[data-progressjs="' + progressjsId + '"] > .progressjs-inner');
+    return targetElement.querySelector('.progressjs-container > .progressjs-progress[data-progressjs="' + progressjsId + '"] > .progressjs-inner');
   }
 
   /**
