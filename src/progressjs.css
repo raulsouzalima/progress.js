@@ -1,3 +1,8 @@
+.progressjs-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .progressjs-inner {
     width: 0;
 }
