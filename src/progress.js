@@ -137,7 +137,7 @@
     progressElementContainer.appendChild(progressElement);
 
     //append the element to container
-    var container = document.querySelector('.progressjs-container');
+    var container = targetElement.querySelector('.progressjs-container');
     container.appendChild(progressElementContainer);
 
     _setPercentFor(targetElement, 1);
