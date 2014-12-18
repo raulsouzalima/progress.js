@@ -323,10 +323,12 @@
           percentElement.parentNode.className += " progressjs-end";
 
           setTimeout(function() {
-            //remove the percent element from page
-            percentElement.parentNode.parentNode.removeChild(percentElement.parentNode);
-            //and remove the attribute
-            currentElement.removeAttribute("data-progressjs");
+            if(percentElement.parentNode.parentNode) {
+              //remove the percent element from page
+              percentElement.parentNode.parentNode.removeChild(percentElement.parentNode);
+              //and remove the attribute
+              currentElement.removeAttribute("data-progressjs");
+            }
           }, 1000);
         }, timeoutSec);
       })(percentElement, currentElement);
